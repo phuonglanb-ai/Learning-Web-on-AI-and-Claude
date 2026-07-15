@@ -64,6 +64,7 @@ export const modules: Module[] = [
             "Humans must still understand enough to control quality, security, and risk.",
           ],
         },
+        videoId: "LQusVP1-1UU",
       },
       {
         slug: "quy-trinh-lam-viec-voi-claude",
@@ -123,6 +124,7 @@ export const modules: Module[] = [
             "Specific, example-based feedback helps the AI correct course faster.",
           ],
         },
+        videoId: "AJpK3YTTKZ4",
       },
       {
         slug: "prompt-hieu-qua-cho-code",

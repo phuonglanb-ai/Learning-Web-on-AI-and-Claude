@@ -8,6 +8,7 @@ interface DictionaryShape {
     modules: string;
     tools: string;
     resources: string;
+    feedback: string;
     admin: string;
   };
   role: {
@@ -38,6 +39,7 @@ interface DictionaryShape {
   lesson: {
     duration: string;
     level: { "co-ban": string; "trung-cap": string; "nang-cao": string };
+    videoTitle: string;
     examplesTitle: string;
     takeawaysTitle: string;
     markComplete: string;
@@ -46,7 +48,7 @@ interface DictionaryShape {
     backToModule: string;
   };
   tools: { title: string; subtitle: string };
-  resources: { title: string; subtitle: string };
+  resources: { title: string; subtitle: string; topicGeneral: string };
   admin: {
     title: string;
     subtitle: string;
@@ -64,6 +66,21 @@ interface DictionaryShape {
     roleLearner: string;
   };
   footer: { builtWith: string; extend: string };
+  feedback: {
+    title: string;
+    subtitle: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submit: string;
+    submitted: string;
+    savedNote: string;
+    listTitle: string;
+    empty: string;
+  };
   chatbot: {
     title: string;
     subtitle: string;
@@ -84,6 +101,7 @@ export const dictionary = {
       modules: "Bài học",
       tools: "Công cụ demo",
       resources: "Tài nguyên",
+      feedback: "Góp ý",
       admin: "Quản trị",
     },
     role: {
@@ -115,6 +133,7 @@ export const dictionary = {
     lesson: {
       duration: "phút",
       level: { "co-ban": "Cơ bản", "trung-cap": "Trung cấp", "nang-cao": "Nâng cao" },
+      videoTitle: "Video minh hoạ",
       examplesTitle: "Ví dụ thực hành",
       takeawaysTitle: "Điểm cần nhớ",
       markComplete: "Đánh dấu đã hoàn thành",
@@ -128,7 +147,8 @@ export const dictionary = {
     },
     resources: {
       title: "Tài nguyên tham khảo",
-      subtitle: "Nguồn tổng hợp đáng tin cậy để đào sâu thêm sau khi học.",
+      subtitle: "Nguồn tổng hợp đáng tin cậy để đào sâu thêm sau khi học, chia theo từng chuyên đề.",
+      topicGeneral: "Tổng quan & liên chuyên đề",
     },
     admin: {
       title: "Bảng quản trị nội dung",
@@ -149,6 +169,21 @@ export const dictionary = {
     footer: {
       builtWith: "Xây dựng với Claude — dễ dàng mở rộng thêm chuyên đề và tích hợp mới.",
       extend: "Mở rộng dự án",
+    },
+    feedback: {
+      title: "Góp ý cải thiện website",
+      subtitle: "Bạn thấy nội dung nào cần bổ sung, hoặc gặp lỗi gì trên trang? Hãy cho chúng tôi biết.",
+      nameLabel: "Tên của bạn (không bắt buộc)",
+      namePlaceholder: "Ví dụ: Lan",
+      emailLabel: "Email liên hệ (không bắt buộc)",
+      emailPlaceholder: "ban@congty.com",
+      messageLabel: "Nội dung góp ý",
+      messagePlaceholder: "Mô tả góp ý, đề xuất hoặc lỗi bạn gặp phải...",
+      submit: "Gửi góp ý",
+      submitted: "Đã ghi nhận góp ý của bạn, cảm ơn bạn!",
+      savedNote: "Góp ý được lưu trong trình duyệt của bạn (localStorage) vì trang chưa có máy chủ backend. Trong triển khai thật, góp ý này sẽ được gửi tới hệ thống quản trị nội dung hoặc email quản trị viên.",
+      listTitle: "Góp ý đã gửi từ trình duyệt này",
+      empty: "Chưa có góp ý nào được gửi từ trình duyệt này.",
     },
     chatbot: {
       title: "Trợ lý học tập",
@@ -172,6 +207,7 @@ export const dictionary = {
       modules: "Lessons",
       tools: "Demo Tools",
       resources: "Resources",
+      feedback: "Feedback",
       admin: "Admin",
     },
     role: {
@@ -203,6 +239,7 @@ export const dictionary = {
     lesson: {
       duration: "min",
       level: { "co-ban": "Beginner", "trung-cap": "Intermediate", "nang-cao": "Advanced" },
+      videoTitle: "Video walkthrough",
       examplesTitle: "Practical examples",
       takeawaysTitle: "Key takeaways",
       markComplete: "Mark as complete",
@@ -216,7 +253,8 @@ export const dictionary = {
     },
     resources: {
       title: "Reference Resources",
-      subtitle: "Trustworthy sources to go deeper after each lesson.",
+      subtitle: "Trustworthy sources to go deeper after each lesson, grouped by topic.",
+      topicGeneral: "General & cross-topic",
     },
     admin: {
       title: "Content Admin Panel",
@@ -237,6 +275,21 @@ export const dictionary = {
     footer: {
       builtWith: "Built with Claude — easy to extend with new modules and integrations.",
       extend: "Extend this project",
+    },
+    feedback: {
+      title: "Suggest an improvement",
+      subtitle: "Spot missing content or a bug on the site? Let us know.",
+      nameLabel: "Your name (optional)",
+      namePlaceholder: "e.g. Lan",
+      emailLabel: "Contact email (optional)",
+      emailPlaceholder: "you@company.com",
+      messageLabel: "Your feedback",
+      messagePlaceholder: "Describe your suggestion, request, or the bug you ran into...",
+      submit: "Send feedback",
+      submitted: "Thanks — your feedback has been recorded!",
+      savedNote: "Feedback is saved in your browser (localStorage) since this site has no backend server yet. In a real deployment, this would be routed to a content management system or the admin's email.",
+      listTitle: "Feedback sent from this browser",
+      empty: "No feedback has been sent from this browser yet.",
     },
     chatbot: {
       title: "Learning Assistant",

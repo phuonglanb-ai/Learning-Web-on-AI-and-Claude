@@ -5,29 +5,11 @@ import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import { useLanguage } from "@/context/AppProviders";
 import { faqItems } from "@/data/faq";
 import { pick, cn } from "@/lib/utils";
+import { answerFor } from "@/lib/chatbot";
 
 interface ChatMessage {
   role: "bot" | "user";
   text: string;
-}
-
-// Simple client-side keyword matcher against the local FAQ dataset.
-// This stands in for a real AI-backed chatbot; swap `answerFor` for an
-// API call to Claude when wiring up a live backend.
-function answerFor(query: string, locale: "vi" | "en"): string | null {
-  const normalized = query.toLowerCase();
-  let best: { score: number; answer: string } | null = null;
-
-  for (const item of faqItems) {
-    const haystack = `${pick(item.question, locale)} ${item.tags.join(" ")}`.toLowerCase();
-    const words = normalized.split(/\s+/).filter((w) => w.length > 2);
-    const score = words.reduce((acc, w) => (haystack.includes(w) ? acc + 1 : acc), 0);
-    if (score > 0 && (!best || score > best.score)) {
-      best = { score, answer: pick(item.answer, locale) };
-    }
-  }
-
-  return best?.answer ?? null;
 }
 
 export function ChatbotWidget() {
@@ -39,7 +21,7 @@ export function ChatbotWidget() {
   const suggested = useMemo(() => faqItems.slice(0, 4), []);
 
   function ask(question: string) {
-    const answer = answerFor(question, locale) ?? t.chatbot.noMatch;
+    const answer = answerFor(question, locale, faqItems) ?? t.chatbot.noMatch;
     setMessages((prev) => [...prev, { role: "user", text: question }, { role: "bot", text: answer }]);
     setInput("");
   }

@@ -26,6 +26,8 @@ export interface Lesson {
   body: LocalizedList;
   examples: Example[];
   keyTakeaways: LocalizedList;
+  /** Optional public YouTube video ID for a lesson walkthrough/demo. */
+  videoId?: string;
 }
 
 export interface Module {
@@ -37,8 +39,16 @@ export interface Module {
   lessons: Lesson[];
 }
 
+export type ResourceTopic =
+  | "general"
+  | "vibe-coding"
+  | "corporate-affairs"
+  | "hr-people-experience"
+  | "quan-tri-rui-ro";
+
 export interface Resource {
   organization: string;
+  topic: ResourceTopic;
   title: Localized;
   type: Localized;
   note: Localized;
@@ -49,4 +59,12 @@ export interface FaqItem {
   question: Localized;
   answer: Localized;
   tags: string[];
+}
+
+export interface FeedbackItem {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  createdAt: string;
 }

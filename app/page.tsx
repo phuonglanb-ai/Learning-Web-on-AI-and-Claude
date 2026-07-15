@@ -5,6 +5,7 @@ import { ArrowRight, BookOpenCheck, Wrench, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/context/AppProviders";
 import { modules, totalLessonCount } from "@/data/modules";
 import { ModuleCard } from "@/components/ModuleCard";
+import { AiPatternBackground } from "@/components/AiPatternBackground";
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -16,15 +17,7 @@ export default function HomePage() {
   return (
     <div>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-500 to-accent-400">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
-            backgroundSize: "42px 42px",
-          }}
-          aria-hidden="true"
-        />
+        <AiPatternBackground variant="dark" className="opacity-40" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-cta-500 px-3 py-1 text-xs font-semibold text-white">

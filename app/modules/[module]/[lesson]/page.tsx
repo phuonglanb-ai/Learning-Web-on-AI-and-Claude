@@ -2,7 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Clock, Lightbulb, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Clock, Lightbulb, ListChecks, PlayCircle } from "lucide-react";
 import { useLanguage, useProgress } from "@/context/AppProviders";
 import { getModuleBySlug, getLessonBySlug } from "@/data/modules";
 import { pick, pickList, cn } from "@/lib/utils";
@@ -72,6 +72,24 @@ export default function LessonPage({
           <p key={idx}>{paragraph}</p>
         ))}
       </article>
+
+      {lesson.videoId && (
+        <section className="mt-8">
+          <h2 className="flex items-center gap-2 font-semibold text-ink-800">
+            <PlayCircle size={18} />
+            {t.lesson.videoTitle}
+          </h2>
+          <div className="mt-4 aspect-video w-full overflow-hidden rounded-xl2 border border-ink-200 shadow-card">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${lesson.videoId}`}
+              title={pick(lesson.title, locale)}
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
 
       {lesson.examples.length > 0 && (
         <section className="mt-8 rounded-xl2 border border-brand-200 bg-brand-50/60 p-6">
