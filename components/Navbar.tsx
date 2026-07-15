@@ -19,6 +19,7 @@ export function Navbar() {
     { href: "/modules", label: t.nav.modules },
     { href: "/tools", label: t.nav.tools },
     { href: "/resources", label: t.nav.resources },
+    { href: "/feedback", label: t.nav.feedback },
     { href: "/admin", label: t.nav.admin },
   ];
 

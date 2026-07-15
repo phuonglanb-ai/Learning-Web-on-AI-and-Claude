@@ -15,29 +15,29 @@ export default function HomePage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-ink-100 bg-gradient-to-b from-brand-50 via-white to-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-500 to-accent-400">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cta-500 px-3 py-1 text-xs font-semibold text-white">
               {t.siteTagline}
             </span>
-            <h1 className="mt-5 text-3xl font-bold tracking-tight text-ink-900 sm:text-5xl">
+            <h1 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-5xl">
               {t.home.heroTitle}
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-ink-600 sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-brand-100 sm:text-lg">
               {t.home.heroSubtitle}
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/modules"
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-card hover:bg-brand-600"
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-cta-500 px-7 py-3 text-sm font-bold text-white shadow-floating hover:bg-cta-600"
               >
                 {t.home.ctaStart}
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/tools"
-                className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-white px-6 py-3 text-sm font-semibold text-ink-700 hover:bg-ink-50"
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white hover:bg-white/20"
               >
                 {t.home.ctaTools}
               </Link>
@@ -53,7 +53,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-ink-900">{t.home.whyTitle}</h2>
+        <SectionHeading className="text-center">{t.home.whyTitle}</SectionHeading>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           <WhyCard
             icon={<BookOpenCheck size={22} />}
@@ -71,7 +71,7 @@ export default function HomePage() {
 
       <section className="border-t border-ink-100 bg-ink-50/60">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-ink-900">{t.home.modulesTitle}</h2>
+          <SectionHeading>{t.home.modulesTitle}</SectionHeading>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {modules.map((m) => (
               <ModuleCard key={m.slug} module={m} />
@@ -83,11 +83,28 @@ export default function HomePage() {
   );
 }
 
+function SectionHeading({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <h2 className="text-2xl font-bold text-ink-900">{children}</h2>
+      <div
+        className={`mt-3 h-1 w-14 rounded-full bg-cta-500 ${className?.includes("text-center") ? "mx-auto" : ""}`}
+      />
+    </div>
+  );
+}
+
 function Stat({ value, label }: { value: number; label: string }) {
   return (
     <div>
-      <p className="text-3xl font-bold text-brand-600">{value}</p>
-      <p className="mt-1 text-xs text-ink-500">{label}</p>
+      <p className="text-3xl font-bold text-white">{value}</p>
+      <p className="mt-1 text-xs text-brand-100">{label}</p>
     </div>
   );
 }
