@@ -236,6 +236,91 @@ export const modules: Module[] = [
           ],
         },
       },
+      {
+        slug: "tu-cong-cu-den-chuong-trinh-automation",
+        title: {
+          vi: "Từ một công cụ nhỏ đến chương trình AI automation có quản trị",
+          en: "From a single small tool to a governed AI automation program",
+        },
+        summary: {
+          vi: "Khi một ý tưởng vibe coding cần mở rộng thành sáng kiến automation cấp phòng ban/doanh nghiệp: quy trình 10 bước và những phần chuyên gia nghiệp vụ không được giao hết cho AI.",
+          en: "When a vibe-coding idea needs to grow into a department- or enterprise-level automation initiative: a 10-step process, and the parts a domain expert must never fully hand off to AI.",
+        },
+        durationMin: 16,
+        level: "nang-cao",
+        body: {
+          vi: [
+            "Vòng lặp 5 bước ở bài \"Quy trình làm việc với Claude\" phù hợp để tạo nhanh một công cụ đơn lẻ. Nhưng khi một công cụ chứng minh được giá trị và cần nhân rộng cho nhiều phòng ban, hoặc xử lý dữ liệu/quyết định có rủi ro cao hơn, cần một phương pháp có cấu trúc hơn — kết hợp tư duy quy trình nghiệp vụ, thiết kế AI, và quản trị rủi ro thay vì chỉ lặp \"mô tả — chạy thử — chỉnh sửa\".",
+            "Các tổ chức đào tạo automation chuyên nghiệp (như UiPath Academy) mô tả một dự án automation trưởng thành đi qua đủ vòng đời: kick-off, đánh giá quy trình hiện tại, thiết kế giải pháp, phát triển, kiểm thử, UAT (User Acceptance Testing), triển khai, hypercare (giai đoạn hỗ trợ sát sao sau go-live), và đóng dự án. Điểm mấu chốt: người sở hữu quy trình nghiệp vụ (process owner) phải tham gia từ giai đoạn phân tích, không phải chỉ nhận bàn giao sản phẩm cuối.",
+            "Trước khi nghĩ đến việc AI có thể làm gì, cần chuẩn hoá chính quy trình đang tồn tại — nhiều bộ phận hỗ trợ (Corporate Affairs, HR, Pháp chế, Rủi ro) mô tả công việc bằng danh sách đầu việc hoặc tên báo cáo, chứ chưa mô tả thành quy trình đầu-cuối. Ví dụ, \"theo dõi tin tức\" thực chất có thể được phân rã thành: xác định nhu cầu thông tin → thu thập → làm sạch → phân loại → đánh giá mức độ liên quan/tác động → xác minh → tổng hợp → escalation → phân phối → tiếp nhận phản hồi. Chỉ sau khi phân rã như vậy mới biết bước nào có thể tự động hoá bằng rule, bước nào cần AI hỗ trợ, và bước nào bắt buộc phải có chuyên gia quyết định.",
+            "Một khung tư duy hệ thống (như của Alan Turing Institute) nhấn mạnh: AI không phải một công cụ kỹ thuật biệt lập, mà là một hệ thống sociotechnical gồm con người, dữ liệu, quy trình, thể chế và quyền lực. Vì vậy, ngay từ khi thiết kế cần trả lời: Ai định nghĩa \"kết quả tốt\"? Ai cung cấp dữ liệu? Ai có thể bị ảnh hưởng hoặc bị loại khỏi hệ thống? Khi AI sai, ai chịu trách nhiệm? Đây chính là các câu hỏi mà tài liệu automation thuần kỹ thuật thường bỏ qua, và là lý do các khung quản trị rủi ro AI (xem module Quản trị rủi ro doanh nghiệp) cần được tích hợp ngay từ đầu, không phải bổ sung sau khi hệ thống đã vận hành.",
+          ],
+          en: [
+            "The 5-step loop from \"Working with Claude\" is well suited to quickly building a single tool. But once a tool proves its value and needs to scale across departments, or touches higher-risk data or decisions, it needs a more structured approach — combining business-process thinking, AI design, and risk governance, rather than just repeating \"describe — run — refine\".",
+            "Professional automation training organizations (like UiPath Academy) describe a mature automation project moving through a full lifecycle: kick-off, current-process assessment, solution design, development, testing, UAT (User Acceptance Testing), deployment, hypercare (close post-launch support), and project closure. The key point: the business process owner must be involved from the analysis stage, not just receive the finished product.",
+            "Before asking what AI can do, standardize the process that already exists — many support functions (Corporate Affairs, HR, Legal, Risk) describe their work as task lists or report names, not as an end-to-end process. For example, \"news monitoring\" can actually be decomposed into: identify information needs → collect → clean → classify → assess relevance/impact → verify → synthesize → escalate → distribute → receive feedback. Only after this decomposition can you tell which steps can be rule-automated, which need AI assistance, and which must remain an expert decision.",
+            "A systems-thinking framework (such as the Alan Turing Institute's) stresses that AI is not an isolated technical tool but a sociotechnical system involving people, data, process, institutions, and power. So the design stage itself must answer: Who defines a \"good outcome\"? Who supplies the data? Who could be affected or excluded by the system? When AI gets it wrong, who is accountable? These are exactly the questions purely technical automation material tends to skip — and why AI risk governance frameworks (see the Enterprise Risk Management module) need to be built in from day one, not bolted on after the system is already running.",
+          ],
+        },
+        examples: [
+          {
+            title: {
+              vi: "Quy trình 10 bước cho một sáng kiến AI automation khối hỗ trợ",
+              en: "A 10-step process for a support-function AI automation initiative",
+            },
+            body: {
+              vi: [
+                "1–2. Xác định outcome mong muốn và ranh giới hệ thống (quy trình bắt đầu/kết thúc ở đâu, ai là stakeholder).",
+                "3–4. Lập bản đồ quy trình hiện tại và phân rã \"knowledge work\" thành thu thập, phân loại, phân tích, phán đoán, quyết định.",
+                "5–6. Chọn mức can thiệp AI phù hợp (automation theo rule, AI hỗ trợ, hay AI agent), rồi đánh giá tính khả thi về dữ liệu và rủi ro.",
+                "7–8. Thiết kế workflow đích (con người và AI phối hợp ở đâu, ai phê duyệt) rồi làm prototype và đánh giá bằng bộ ca kiểm thử.",
+                "9–10. Pilot có UAT và hypercare, sau đó theo dõi liên tục và mở rộng dần khi đã ổn định.",
+              ],
+              en: [
+                "1–2. Define the desired outcome and the system boundary (where the process starts/ends, who the stakeholders are).",
+                "3–4. Map the current process and decompose the \"knowledge work\" into collection, classification, analysis, judgment, and decision-making.",
+                "5–6. Choose the right level of AI intervention (rule-based automation, AI assistance, or an AI agent), then assess data and risk feasibility.",
+                "7–8. Design the target workflow (where humans and AI collaborate, who approves) then build a prototype and evaluate it against a test-case set.",
+                "9–10. Pilot with UAT and hypercare, then monitor continuously and scale gradually once stable.",
+              ],
+            },
+          },
+          {
+            title: {
+              vi: "7 điều chuyên gia nghiệp vụ phải đồng sở hữu, không giao hết cho AI",
+              en: "7 things a domain expert must co-own, never fully hand off to AI",
+            },
+            body: {
+              vi: [
+                "Định nghĩa vấn đề (thế nào mới là đúng vấn đề cần giải quyết).",
+                "Hệ thống thuật ngữ và phân loại (domain taxonomy) của lĩnh vực.",
+                "Logic ra quyết định và logic xử lý ngoại lệ.",
+                "Bộ dữ liệu đánh giá gồm cả ca đúng, sai, khó và nhạy cảm.",
+                "Ngưỡng chấp nhận sai số, và trường hợp nào AI chỉ được đề xuất chứ không được tự quyết định.",
+              ],
+              en: [
+                "Problem definition (what actually counts as the right problem to solve).",
+                "The domain's taxonomy and classification system.",
+                "Decision logic and exception-handling logic.",
+                "An evaluation dataset covering correct, incorrect, hard, and sensitive cases.",
+                "Acceptable error thresholds, and which cases AI may only propose rather than decide on its own.",
+              ],
+            },
+          },
+        ],
+        keyTakeaways: {
+          vi: [
+            "Mở rộng từ một công cụ vibe coding sang một sáng kiến automation cấp phòng ban cần thêm quản trị vòng đời, không chỉ thêm tính năng.",
+            "Chuẩn hoá quy trình hiện tại trước khi tự động hoá — nếu không, AI sẽ chỉ tăng tốc một quy trình vốn đã rối.",
+            "Chuyên gia nghiệp vụ luôn phải giữ quyền quyết định ở các điểm rủi ro cao, không giao trọn cho công nghệ.",
+          ],
+          en: [
+            "Scaling from a vibe-coding tool to a department-level automation initiative requires added lifecycle governance, not just more features.",
+            "Standardize the existing process before automating it — otherwise AI just speeds up a process that was already messy.",
+            "Domain experts must always retain decision authority at high-risk points, never fully outsourcing it to the technology.",
+          ],
+        },
+      },
     ],
   },
 
@@ -367,12 +452,14 @@ export const modules: Module[] = [
             "Giá trị thực sự nằm ở việc AI giúp phân biệt \"nhiễu\" (một vài bình luận tiêu cực lẻ tẻ) với \"tín hiệu thật\" (một xu hướng đang tăng tốc có khả năng thành khủng hoảng) — thông qua theo dõi tốc độ tăng trưởng đề cập và mức độ lan toả giữa các nhóm đối tượng khác nhau, không chỉ tổng số lượng.",
             "Một khung phản ứng khủng hoảng có hỗ trợ AI thường gồm: (1) phát hiện sớm bằng giám sát tự động, (2) AI tổng hợp nhanh bối cảnh và các bên liên quan chính, (3) con người đánh giá mức độ nghiêm trọng và quyết định phản ứng, (4) AI hỗ trợ soạn thảo phản hồi theo nhiều kịch bản để lãnh đạo lựa chọn.",
             "Hạn chế cần lưu ý: mô hình phân tích cảm xúc có thể hiểu sai ngữ cảnh văn hoá, mỉa mai, hoặc tiếng lóng địa phương — đặc biệt quan trọng với thị trường đa ngôn ngữ như Việt Nam, nơi sắc thái ngôn ngữ vùng miền có thể khiến AI đánh giá sai mức độ nghiêm trọng.",
+            "Các hiệp hội nghề nghiệp truyền thông đã đưa ra hướng dẫn cụ thể cho vùng \"xám\" này: Arthur W. Page Society nói về sự chuyển dịch từ khảo sát định kỳ sang \"stakeholder intelligence\" gần thời gian thực nhưng vẫn đòi hỏi human leadership để giữ niềm tin; IABC yêu cầu người làm truyền thông luôn chịu trách nhiệm cuối cùng với nội dung có AI hỗ trợ (verification, fairness, transparency); còn CIPR và PRCA đều nhấn mạnh việc công bố rõ khi nội dung có sự hỗ trợ của AI, đặc biệt trong bối cảnh khủng hoảng.",
           ],
           en: [
             "Generative AI and sentiment analysis models can scan large volumes of content (social media, press, forums) in near-real time, detect emerging topic clusters, and estimate the pace of spread — something manual monitoring cannot do at scale.",
             "The real value lies in AI helping distinguish \"noise\" (a handful of scattered negative comments) from a \"real signal\" (an accelerating trend likely to become a crisis) — by tracking the growth rate of mentions and spread across different audience segments, not just raw volume.",
             "An AI-assisted crisis response framework typically includes: (1) early detection via automated monitoring, (2) AI quickly synthesizing context and key stakeholders, (3) humans assessing severity and deciding on a response, (4) AI drafting multiple response scenarios for leadership to choose from.",
             "A key limitation: sentiment models can misread cultural context, sarcasm, or local slang — especially important in multilingual markets like Vietnam, where regional linguistic nuance can lead AI to misjudge severity.",
+            "Communications professional bodies offer concrete guidance for this gray zone: the Arthur W. Page Society describes the shift from periodic surveys to near-real-time \"stakeholder intelligence\" that still requires human leadership to preserve trust; IABC requires communicators to always hold final responsibility for AI-assisted content (verification, fairness, transparency); and both CIPR and PRCA stress clearly disclosing when content had AI assistance, especially during a crisis.",
           ],
         },
         examples: [
@@ -653,6 +740,7 @@ export const modules: Module[] = [
             "SHRM khuyến nghị một khung đánh giá AI tuyển dụng gồm: kiểm toán định kỳ kết quả theo nhóm nhân khẩu học (audit for disparate impact), luôn có lựa chọn để ứng viên yêu cầu xem xét lại bởi con người, và ghi lại tài liệu về cách mô hình được huấn luyện và kiểm định.",
             "Với đánh giá hiệu suất, HBR cảnh báo về rủi ro \"tự động hoá thiên vị\" khi dùng AI để tổng hợp đánh giá 360 độ hoặc chấm điểm hiệu suất — nếu dữ liệu đầu vào (nhận xét bằng lời) đã mang thiên vị vô thức, AI có thể khuếch đại thay vì loại bỏ nó khi tổng hợp ở quy mô lớn.",
             "Thực hành khuyến nghị: xem AI là công cụ hỗ trợ ra quyết định (decision support), không phải người ra quyết định (decision maker) trong các tình huống ảnh hưởng đến quyền lợi cá nhân nhân viên; luôn có con đường để con người xem xét lại; và kiểm toán định kỳ, độc lập kết quả AI theo các nhóm nhân khẩu học được bảo vệ theo luật.",
+            "Tổ chức Lao động Quốc tế (ILO) mở rộng vấn đề này ra ngoài phạm vi tuyển dụng: khung \"Algorithmic Management\" của ILO phân tích cách hệ thống thuật toán không chỉ sàng lọc mà còn tổ chức, phân công, giám sát và đánh giá lao động hằng ngày (ví dụ chấm điểm năng suất tự động, lịch làm việc do AI tối ưu hoá). ILO nhấn mạnh cần đối thoại xã hội (social dialogue) với người lao động trước khi triển khai, và lưu ý các rủi ro tâm lý xã hội (psychosocial risks) khi nhân viên cảm thấy bị giám sát liên tục bởi thuật toán thay vì quản lý con người.",
           ],
           en: [
             "Algorithmic bias in recruiting usually doesn't stem from bad intent, but from training data that reflects historical bias — a model trained on past hiring data can inadvertently learn gender or age discrimination patterns embedded in prior hiring decisions, even without any field explicitly recording gender or age.",
@@ -660,6 +748,7 @@ export const modules: Module[] = [
             "SHRM recommends an AI-hiring evaluation framework that includes: periodic audits of outcomes by demographic group (audit for disparate impact), always offering candidates a path to request human review, and documenting how the model was trained and validated.",
             "For performance evaluation, HBR warns of \"automating bias\" risk when using AI to synthesize 360-degree reviews or performance scores — if the input data (written comments) already carries unconscious bias, AI can amplify rather than remove it when aggregating at scale.",
             "Recommended practice: treat AI as decision support, not the decision maker, in situations affecting an individual employee's rights and interests; always provide a path for human review; and conduct periodic, independent audits of AI outcomes across legally protected demographic groups.",
+            "The International Labour Organization (ILO) extends this issue beyond hiring: its \"Algorithmic Management\" framework analyzes how algorithmic systems don't just screen but also organize, assign, monitor, and evaluate work day-to-day (e.g. automated productivity scoring, AI-optimized scheduling). ILO stresses the need for social dialogue with workers before rollout, and flags the psychosocial risks when employees feel continuously monitored by an algorithm rather than managed by a person.",
           ],
         },
         examples: [
@@ -723,12 +812,14 @@ export const modules: Module[] = [
             "Nhận diện rủi ro (risk identification) là khâu AI tạo giá trị rõ nhất hiện nay: quét khối lượng lớn dữ liệu phi cấu trúc (tin tức, báo cáo nội bộ, dữ liệu vận hành, mạng xã hội) để phát hiện các rủi ro mới nổi mà quy trình khảo sát thủ công định kỳ (thường mỗi năm một lần) dễ bỏ sót do độ trễ.",
             "Theo các báo cáo của Deloitte và McKinsey về AI trong quản trị rủi ro, khâu định lượng rủi ro tài chính/tín dụng đã ứng dụng AI/machine learning từ lâu (mô hình dự báo), trong khi khâu định lượng rủi ro phi tài chính (rủi ro danh tiếng, rủi ro vận hành, rủi ro con người) vẫn đang trong giai đoạn phát triển do bản chất khó lượng hoá.",
             "Một xu hướng quan trọng: sự dịch chuyển từ quản trị rủi ro \"phản ứng\" (đánh giá rủi ro đã xảy ra hoặc theo chu kỳ cố định) sang \"chủ động liên tục\" (continuous risk sensing) — nhờ AI có thể xử lý dữ liệu thời gian thực với chi phí thấp hơn nhiều so với trước đây.",
+            "COSO — tổ chức xây dựng khung ERM này — cũng ban hành hướng dẫn riêng \"Realize the Full Potential of Artificial Intelligence\", áp dụng trực tiếp các nguyên tắc ERM vào việc xây dựng chiến lược và triển khai AI, cùng hướng dẫn về kiểm soát nội bộ (internal control) đối với AI tạo sinh. Một công cụ bổ trợ hữu ích khác là khung phân loại 5 chiều của OECD (People & Planet, Economic Context, Data & Input, AI Model, Task & Output) — giúp xác định đầy đủ các bên bị ảnh hưởng và tác nhân AI trong một hệ thống trước khi đánh giá rủi ro.",
           ],
           en: [
             "The most widely used Enterprise Risk Management (ERM) framework — COSO ERM — describes a continuous loop: establishing context & objectives, identifying risk, assessing/quantifying, responding, monitoring & reporting. AI can assist at nearly every step, though maturity varies significantly.",
             "Risk identification is where AI currently delivers the clearest value: scanning large volumes of unstructured data (news, internal reports, operational data, social media) to surface emerging risks that periodic manual surveys (often annual) tend to miss due to lag.",
             "Per Deloitte and McKinsey reports on AI in risk management, quantifying financial/credit risk has used AI/machine learning for a long time (forecasting models), while quantifying non-financial risk (reputational, operational, people risk) is still maturing due to how hard it is to measure.",
             "A key trend: the shift from \"reactive\" risk management (assessing risk that has already occurred, or on a fixed cycle) to \"continuous risk sensing\" — made possible by AI processing real-time data at a much lower cost than before.",
+            "COSO — the organization behind this ERM framework — also publishes \"Realize the Full Potential of Artificial Intelligence\", applying ERM principles directly to AI strategy and deployment, plus guidance on internal control over generative AI. Another useful complementary tool is the OECD's 5-dimension classification (People & Planet, Economic Context, Data & Input, AI Model, Task & Output) — helpful for fully mapping the affected parties and AI actors in a system before assessing its risk.",
           ],
         },
         examples: [
@@ -891,6 +982,8 @@ export const modules: Module[] = [
             "Rủi ro chuỗi cung ứng AI (AI supply chain risk) cũng ngày càng được chú ý: khi tổ chức dùng mô hình AI của bên thứ ba, cần hiểu rõ dữ liệu huấn luyện đến từ đâu, mô hình được kiểm định thế nào, và trách nhiệm pháp lý khi mô hình gây ra lỗi thuộc về ai — những câu hỏi cần đưa vào quy trình đánh giá nhà cung cấp (vendor due diligence).",
             "Về mặt cơ cấu quản trị, thực hành đang nổi lên (được phản ánh trong các khảo sát của Deloitte và McKinsey về AI governance) là thành lập một hội đồng/uỷ ban quản trị AI liên chức năng (thường gồm đại diện Rủi ro, Pháp chế, CNTT, và các đơn vị nghiệp vụ chính) chịu trách nhiệm phê duyệt trường hợp sử dụng AI có rủi ro cao, thay vì để từng phòng ban tự quyết định độc lập.",
             "Với đội Corporate Affairs, HR và Quản trị rủi ro — những người có thể vừa là người dùng AI, vừa là người phải quản trị rủi ro AI cho tổ chức — vai trò kép này đòi hỏi vừa thành thạo công cụ, vừa duy trì tư duy phản biện độc lập về giới hạn và rủi ro của chính công cụ mình đang dùng.",
+            "Cụ thể hơn về NIST AI RMF: khung này tổ chức hành động quản trị theo bốn chức năng — Govern (thiết lập chính sách, vai trò, trách nhiệm và văn hoá quản trị AI ở cấp tổ chức), Map (xác định bối cảnh, mục đích sử dụng, người dùng và tác động tiềm ẩn của một hệ thống AI cụ thể), Measure (đo hiệu năng, độ tin cậy và mức rủi ro bằng phương pháp phù hợp), và Manage (ưu tiên, xử lý và theo dõi rủi ro theo thời gian). Đây không phải một checklist tuyến tính làm một lần, mà là bốn nhóm hành động lặp lại theo vòng đời hệ thống.",
+            "Ba tiêu chuẩn ISO bổ trợ cho NIST theo hướng cụ thể hơn ở tầng tổ chức: ISO/IEC 42001 quy định cách một tổ chức thiết lập, vận hành và cải tiến liên tục một hệ thống quản lý AI (chính sách, mục tiêu, trách nhiệm, quy trình); còn ISO/IEC 42005 hướng dẫn đánh giá tác động của một use case AI cụ thể đối với cá nhân, nhóm và xã hội. Về mặt pháp lý, EU AI Act phân loại các use case AI theo bốn mức rủi ro (không chấp nhận được, cao, giới hạn, tối thiểu) và quy định nghĩa vụ giám sát của con người (human oversight) tương ứng với từng mức — một điểm tham chiếu hữu ích ngay cả với doanh nghiệp ngoài EU khi làm việc với đối tác quốc tế.",
           ],
           en: [
             "As organizations adopt AI broadly, AI itself becomes a new category of enterprise risk that belongs on the risk register — alongside its role as a risk-management tool. Current AI governance frameworks (e.g. the NIST AI Risk Management Framework) suggest evaluating AI risk across four areas: validity & reliability, safety, fairness (bias mitigation), and transparency & accountability.",
@@ -898,6 +991,8 @@ export const modules: Module[] = [
             "AI supply chain risk is also drawing more attention: when an organization uses a third-party AI model, it needs to understand where the training data came from, how the model was validated, and who bears legal liability when the model causes an error — questions that belong in vendor due diligence.",
             "On governance structure, an emerging practice (reflected in Deloitte and McKinsey surveys on AI governance) is establishing a cross-functional AI governance committee (typically including Risk, Legal, IT, and key business units) responsible for approving high-risk AI use cases, rather than letting each department decide independently.",
             "For Corporate Affairs, HR, and Risk Management teams — who may be both users of AI and the people responsible for governing AI risk for the organization — this dual role requires both proficiency with the tools and independent critical thinking about the limits and risks of those very tools.",
+            "More specifically on the NIST AI RMF: the framework organizes governance action into four functions — Govern (establish policy, roles, responsibilities, and an organization-wide AI governance culture), Map (identify the context, intended use, users, and potential impact of a specific AI system), Measure (assess performance, reliability, and risk level using appropriate methods), and Manage (prioritize, respond to, and track risk over time). This isn't a one-time linear checklist, but four recurring groups of action across the system's lifecycle.",
+            "Three ISO standards complement NIST with more organization-level specificity: ISO/IEC 42001 specifies how an organization establishes, operates, and continuously improves an AI management system (policy, objectives, responsibilities, processes); ISO/IEC 42005 guides assessing the impact of a specific AI use case on individuals, groups, and society. Legally, the EU AI Act classifies AI use cases into four risk tiers (unacceptable, high, limited, minimal) and sets human-oversight obligations for each tier — a useful reference point even for non-EU organizations working with international partners.",
           ],
         },
         examples: [
