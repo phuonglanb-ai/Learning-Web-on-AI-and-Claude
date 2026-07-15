@@ -387,6 +387,7 @@ export const modules: Module[] = [
             "The risk of misinformation spreading requires tighter verification processes when using AI.",
           ],
         },
+        videoId: "KQeqwZMZ0UY",
       },
       {
         slug: "tu-dong-hoa-soan-thao-truyen-thong",
@@ -617,6 +618,7 @@ export const modules: Module[] = [
             "AI's core value in HR is freeing up time for meaningful human interaction.",
           ],
         },
+        videoId: "ekdJsOaFE0I",
       },
       {
         slug: "hr-ops-automation",
@@ -855,6 +857,7 @@ export const modules: Module[] = [
             "There's a shift from cyclical risk management to continuous monitoring, enabled by AI.",
           ],
         },
+        videoId: "jBj_kFUg0Eg",
       },
       {
         slug: "nhan-dien-dinh-luong-rui-ro-ai",
